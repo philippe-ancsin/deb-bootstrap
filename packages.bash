@@ -1,9 +1,6 @@
 #!/bin/bash
 
-'''
-DEVELOPERTOOLS FOR LINUX
-TODO: add ~./vimrc
-'''
+# DEVELOPERTOOLS FOR LINUX
 
 set -e
 
