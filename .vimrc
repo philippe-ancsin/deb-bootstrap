@@ -1,5 +1,5 @@
-# execute pathogen#infect()
-# call pathogen#helptags()
+" execute pathogen#infect()
+" call pathogen#helptags()
 
 " custom configs
 set mouse=a " activate *all* mouse interactions
