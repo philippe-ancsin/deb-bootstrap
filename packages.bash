@@ -1,6 +1,6 @@
 #!/bin/bash
 
-'''
+'b''
 DEVELOPERTOOLS FOR LINUX
 TODO: add ~./vimrc
 '''
@@ -20,7 +20,17 @@ sudo apt install \
 
 # vundle (package manager) for vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-# get ~/.vimrc from ftp server
+
+# get .vimrc from repository
+user="philippe-ancsin"
+repository="deb-bootstrap"
+branch="master"
+raw_file=".vimrc"
+tmp_path="/tmp/"$raw_file
+dest_path="~/.vimrc"
+curl -o $tmp_path https://raw.githubusercontent.com/$user/$repository/$branch/$raw_file
+cp $get_path $dest_path
+
 vim +PluginInstall +qall
 
 # nvm (node version manager)
