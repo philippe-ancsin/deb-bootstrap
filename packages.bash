@@ -1,6 +1,6 @@
 #!/bin/bash
 
-'b''
+'''
 DEVELOPERTOOLS FOR LINUX
 TODO: add ~./vimrc
 '''
