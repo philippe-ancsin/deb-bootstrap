@@ -16,7 +16,7 @@ sudo apt install \
         python-pip python3-pip
 
 # vundle (package manager) for vim
-# git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # get .vimrc from repository
 user="philippe-ancsin"
