@@ -6,7 +6,11 @@ set mouse=a " activate *all* mouse interactions
 set number " show line numbers
 set tabstop=4 " tabs have 4 spaces
 set shiftwidth=4 " automatic shifting
+" set expandtab
+set autoindent
+set smartindent
 set autochdir " change working directory to where the current file is
+set hlsearch " search highlighting
 
 " remapping
 " enable sudo writing
