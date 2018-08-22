@@ -73,7 +73,7 @@ echo -e $main_src > src/"${main_file_name}.c"
 
 # run script
 echo_green "redefine run script..."
-run_script_src="clear && cmake . && make && clear && ./build/${main_file_name}"
+run_script_src="#!/bin/bash\n\nif [ \$# -eq 0 ]\nthen\n\tclear && cmake . && make && clear && ./build/${main_file_name}\nelse\n\tclear && cmake . && make && clear && \"./build/\${1}\"\nfi\n\nexit 0"
 echo -e $run_script_src > "run"
 chmod +x run
 
