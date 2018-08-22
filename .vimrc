@@ -11,6 +11,7 @@ set autoindent
 set smartindent
 set autochdir " change working directory to where the current file is
 set hlsearch " search highlighting
+syntax on
 
 " remapping
 " enable sudo writing
