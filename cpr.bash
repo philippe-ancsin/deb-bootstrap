@@ -27,24 +27,34 @@ mkdir $project_name
 
 ### make project folder structure ###
 cd $project_name
-echo_green "create include, src, build, docs, tools, tests..."
+echo_green "create include, src, build, docs, tools, dep..."
 mkdir \
 	include \
 	src \
 	build \
 	docs \
 	tools \
-	tests
+	dep
+echo_green "create bin, lib, spec in build directory..."
+cd build
+mkdir \
+	bin \
+	lib \
+	spec
+cd ..
 
 ### make files ###
 echo_green "create files CMakeLists.txt, README.md, .gitignore, run script..."
 touch "CMakeLists.txt" "README.md" ".gitignore run"
 
+<< --MAIN--
 printf "> name of main c file: "
 read main_file_name
 
 echo_green "create main file..."
 touch src/"${main_file_name}.c"
+--MAIN--
+
 
 ### write content to files ###
 
@@ -66,10 +76,12 @@ gitignore_src="*.swp\nbuild/*\nCMakeCache.txt\nCMakeFiles\nCMakeScripts\nTesting
 echo -e $gitignore_src > ".gitignore"
 
 # <main>.c
+<< --MAIN--
 echo_green "redefine main file..."
 # main_src="/*\n * main\n */\n\n#include <stdio.h>\n#include <stdlib.h>\n\nint main(int argc, const char *argv[]) {\n\t//...\n\treturn EXIT_SUCCESS;\n}" -> bug
 main_src="// ${main_file_name}.c\n\n#include <stdio.h>\n#include <stdlib.h>\n\nint main(int argc, const char *argv[]) {\n\t// ...\n\n\treturn EXIT_SUCCESS;\n}"
 echo -e $main_src > src/"${main_file_name}.c"
+--MAIN--
 
 # run script
 echo_green "redefine run script..."
